@@ -14,11 +14,14 @@ function Category({result: cardResult}) {
   const [currentCategory, setCurrentCategory] = useState([]);
   const selectedCategory = useSelector(state => state.category)
 
+  console.log(result);
+
   useEffect(() => {
     fetch(URL)
     .then(res => res.json())
     .then(data => {
       setResult(data)
+      console.log(data);
       setCurrentCategory(data[0].sap_categories)
     })
 
@@ -48,7 +51,7 @@ function Category({result: cardResult}) {
     <li className='item'>
       <button onClick={showCategories}>{selectedCategory}<i className="fal fa-chevron-down"></i></button>
       <div className='inner' style={{display: showCategory}}>
-        <ul className='category-list'>
+        {/* <ul className='category-list'>
           {result.map(item => {
             return (
               <li onMouseEnter={() => {setCurrentCategory(item.sap_categories)}} className='category-item' key={item.id}>
@@ -57,7 +60,7 @@ function Category({result: cardResult}) {
               </li>
             )
           })}
-        </ul>
+        </ul> */}
         <ul className='sub-category-list'>
           {currentCategory[0] && currentCategory.map(item => {
             return (
