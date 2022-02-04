@@ -181,56 +181,6 @@ const Dropdown = styled.ul`
       }
     }
 
-    .checkbox-label {
-      position: relative;
-      display: flex;
-      align-items: center;
-      flex-direction: row-reverse;
-      width: 150px;
-      outline-color: ${Colors.color_brown};
-      font-family: ${Fonts.font_dinpro};
-      font-size: 22px;
-      color: ${Colors.color_black};
-      font-weight: 500;
-
-      &::before {
-        content: "";
-        width: 70px;
-        height: 35px;
-        border-radius: 35px;
-        background-color: ${Colors.color_grey};
-        display: inline-block;
-        margin-left: 10px;
-        overflow: hidden;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        width: 35px;
-        height: 35px;
-        display: inline-block;
-        background-color: ${Colors.color_brown};
-        border-radius: 31px;
-        transition: right 0.1s ease;
-      }
-    }
-
-    .checkbox:checked + .checkbox-label::after {
-      right: 36px;
-      background-color: #fff;
-    }
-
-    .checkbox:checked + .checkbox-label::before {
-      border-color: ${Colors.color_brown};
-    }
-
-    .checkbox {
-      display: none;
-    }
-
     .btn {
       background-color: ${Colors.color_brown};
       color: #fff;
@@ -290,26 +240,84 @@ const Dropdown = styled.ul`
     select {
       font-size: 16px;
     }
-
-    .checkbox-label {
-      font-size: 16px;
-
-      &::before {
-        width: 40px;
-        height: 22px;
-      }
-
-      &::after {
-        top: 3px;
-        width: 16px;
-        height: 16px;
-      }
-    }
-    
-    .checkbox:checked + .checkbox-label::after {
-      right: 21px;
-    }
   }
 `
 
-export { Dropdown };
+const Checkbox = styled.div`
+
+.checkbox-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  width: 150px;
+  outline-color: ${Colors.color_brown};
+  font-family: ${Fonts.font_dinpro};
+  font-size: 22px;
+  color: ${Colors.color_black};
+  font-weight: 500;
+
+  &::before {
+    content: "";
+    width: 70px;
+    height: 35px;
+    border-radius: 35px;
+    background-color: ${Colors.color_grey};
+    display: inline-block;
+    margin-left: 10px;
+    overflow: hidden;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    background-color: ${Colors.color_brown};
+    border-radius: 31px;
+    transition: right 0.1s ease;
+  }
+}
+
+.checkbox:checked + .checkbox-label::after {
+  right: 36px;
+  background-color: #fff;
+}
+
+.checkbox:checked + .checkbox-label::before {
+  border-color: ${Colors.color_brown};
+}
+
+.checkbox {
+  display: none;
+}
+
+@media (max-width: ${Width.max_xs}) {
+
+  
+  .checkbox-label {
+    font-size: 16px;
+    
+    &::before {
+    width: 40px;
+    height: 22px;
+  }
+  
+  &::after {
+    top: 3px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+  .checkbox:checked + .checkbox-label::after {
+    right: 21px;
+  }
+}
+
+`
+
+export { Dropdown, Checkbox };

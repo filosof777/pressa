@@ -8,26 +8,27 @@ import clock from '../../../../assets/icons/clock.svg'
 import offline from '../../../../assets/icons/offline.svg'
 import online from '../../../../assets/icons/online.svg'
 import { Button } from '../../../../Auth/Mixins';
-import { Link, Route, Router, Routes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-function List({ result, pages, setPages, card, setCard, setHandleId }) {
+function List({ result, pages, setPages, setHandleId }) {
 
   function changePages() {
     setPages(pages + 1)
+    console.log(pages);
   }
   return (
     <Wrapper>
       <Container>
         <ul>
           {result.length > 0 ? result.map(item => {
-            let timeDate = item.date.split('T')
+            let timeDate = item.date.split(' ')
             let date = timeDate[0]
             let time = timeDate[1]
 
             return (
               <li className='item' key={item.id}>
                   <Link onClick={() => {setHandleId([item.id, item.category_id])}} to={`/card/${item.id}`} >
-                    <img src={"https://dream-team-n1.herokuapp.com/public/master.jpg"} alt={item.title} role="presentation" />
+                    <img src={"https://dream-team-v2.herokuapp.com/public/master.jpg"} alt={item.title} role="presentation" />
                   </Link>
                   <div className='inner'>
                     <h2>{item.title}</h2>

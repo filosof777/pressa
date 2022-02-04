@@ -14,7 +14,7 @@ function Search({ result }) {
   function ShowCancelBtn(e) {
     e.preventDefault();
     (async function () {
-      const {data} = await axios.get(`https://dream-team-n1.herokuapp.com/api/cards?search=${search}`)
+      const {data} = await axios.get(`https://dream-team-v2.herokuapp.com/api/cards?search=${search}`)
       dispatch(InitialRequest(data))
     })()
   } 
@@ -27,7 +27,7 @@ function Search({ result }) {
     <Container>
       <Wrapper>
         <div>
-          <h1>Find a masterclass you will love to join</h1>
+          <h1>Master klasslarni topish yanada oson</h1>
         </div>
         <form onSubmit={ShowCancelBtn}>
           <input 

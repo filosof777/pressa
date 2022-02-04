@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react/cjs/react.development';
+import { Checkbox } from '../../Auth/pages/Dropdowns/Dropdowns';
 import { StatusChange } from './../../Actions/index'
 
 function Type({result, setResult, data}) {
@@ -27,12 +28,14 @@ function Type({result, setResult, data}) {
 
   return (
     <li className='item'>
-      <input className='checkbox' type="checkbox" id='radio' />
-      <label 
-        className='checkbox-label' 
-        onClick={handleChangeValue} 
-        htmlFor="radio">{status}
-      </label>
+      <Checkbox>
+        <input className='checkbox' type="checkbox" id='radio' />
+        <label 
+          className='checkbox-label' 
+          onClick={handleChangeValue} 
+          htmlFor="radio">{status}
+        </label>
+      </Checkbox>
     </li>
   );
 }

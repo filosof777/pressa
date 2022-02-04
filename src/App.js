@@ -17,7 +17,8 @@ function App() {
   const [handleID, setHandleId] = useState([]);
 
   const fetchData = async () => {
-    const {data} = await axios.get(`https://dream-team-n1.herokuapp.com/api/cards?page=${pages}`);
+    const {data} = await axios.get(`https://dream-team-v2.herokuapp.com/api/cards?page=${pages}`);
+    console.log(pages);
     return data
   }
 
@@ -29,7 +30,7 @@ function App() {
     fetchData().then((result) => {
       dispatch(InitialRequest(result))
     }) 
-  }, [])
+  }, [pages])
 
   return (
     <BrowserRouter>

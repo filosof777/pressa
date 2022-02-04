@@ -4,6 +4,8 @@ import { Container } from '../../../Auth/Containers';
 import TextField from './TextField';
 import { Button } from '../../../Auth/Mixins';
 import * as Yup from 'yup';
+import { Wrapper } from '../../../Auth/pages/Post/Post';
+import { Checkbox } from '../../../Auth/pages/Dropdowns/Dropdowns';
 
 function Post() {
   const validate = Yup.object({
@@ -63,9 +65,9 @@ function Post() {
       
       >
         {formik => (
-          <div>
+          <Wrapper>
             <Form>
-              <TextField label="Jismoniy shaxs" selected name="person-type" id='yurdik_shaxs' type="radio" value='yurdik_shaxs' />
+              <TextField className="laasasa" label="Jismoniy shaxs" selected name="person-type" id='yurdik_shaxs' type="radio" value='yurdik_shaxs' />
               <TextField label="Yuridik shaxs" name="person-type" id='jismoniy_shaxs' type="radio" value='jismoniy_shaxs' />
               <TextField label="Ism Familiya" name="fullname" type="text" />
               <TextField label="Tel raqam" name="tell_number" type="number" />
@@ -73,7 +75,13 @@ function Post() {
               <TextField label="Email" name="email" type="email" />
               <TextField name="data" type="date" />
               <TextField name="time" type="time" />
-              <TextField label="Online" name="time" type="time" />
+              <Checkbox>
+                <input className='checkbox' type="checkbox" id='radio' />
+                <label 
+                  className='checkbox-label'
+                  htmlFor="radio">
+                </label>
+              </Checkbox>
               <TextField label="Kategoriya" name="category" type="text" />
               <TextField label="Yo'nalish" name="sub_category" type="text" />
               <TextField label="Linkni kiriting" name="link" type="url" />
@@ -84,7 +92,7 @@ function Post() {
               <Button type='submit'>Send</Button>
               <Button type='reset'>Reset</Button>
             </Form>
-          </div>
+          </Wrapper>
         )}
       </Formik>
     </Container>
