@@ -162,7 +162,6 @@ function Post() {
                     </label>
                   </Checkbox>
                 </div>
-
                 <div className="select">
                   <div>
                     <label>Kategoriya</label>
