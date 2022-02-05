@@ -8,7 +8,7 @@ const Container = styled.div`
   padding-right: ${Width.padding};
   margin-left: auto;
   margin-right: auto;
-`
+`;
 
 const ContainerFluid = styled.div`
   width: 100%;
@@ -23,6 +23,6 @@ const ContainerFluid = styled.div`
   @media (max-width: ${Width.max_xs}) {
     padding: 0;
   }
-`
+`;
 
 export { Container, ContainerFluid };

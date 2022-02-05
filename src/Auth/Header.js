@@ -8,46 +8,46 @@ const Headers = styled.header`
   background-color: ${Colors.background_color};
   box-shadow: 0 0 5px 1px #00000050;
 
-    img {
-      width: 115px;
-      height: 50px;
-    }
-    nav {
-      display: flex;
-      align-items: center;
+  img {
+    width: 115px;
+    height: 50px;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    ul {
       margin-left: auto;
-      
-      ul {
-        margin-left: auto;
-        display: flex;
-        
-        li:not(:last-child) {
-          margin-right: 40px;
-        }
+      display: flex;
+
+      li:not(:last-child) {
+        margin-right: 40px;
       }
-      
-      a {
-        font-weight: 400;
-        font-size: 22px;
-        color: ${Colors.color_black};
-      }
-      
-      button {
-        font-weight: 400;
-        margin-left: 60px;
-      }
+    }
+
+    a {
+      font-weight: 400;
+      font-size: 22px;
+      color: ${Colors.color_black};
     }
 
     button {
-      border: none;
+      font-weight: 400;
+      margin-left: 60px;
     }
+  }
 
-    button i {
-      font-size: 22px;
-      color: ${Colors.color_brown};
-      display: none;
-    }
-  
+  button {
+    border: none;
+  }
+
+  button i {
+    font-size: 22px;
+    color: ${Colors.color_brown};
+    display: none;
+  }
+
   @media (max-width: ${Width.max_md}) {
     padding: 30px 0;
 
@@ -64,16 +64,16 @@ const Headers = styled.header`
       ul {
         flex-direction: column;
         margin: 0 auto;
-        
+
         li:not(:last-child) {
           margin-right: 0px;
         }
-        
+
         li {
           margin-bottom: 30px;
         }
       }
-      
+
       button {
         margin-left: 0;
       }
@@ -101,14 +101,13 @@ const Headers = styled.header`
 
     ul {
       text-align: center;
-
     }
     button {
       display: flex;
       margin: 0 auto;
     }
   }
-  
+
   @media (max-width: ${Width.max_xs}) {
     padding: 20px 0;
 
@@ -125,6 +124,6 @@ const Headers = styled.header`
       font-size: 18px;
     }
   }
-`
+`;
 
 export { Headers };

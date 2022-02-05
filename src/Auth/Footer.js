@@ -10,7 +10,6 @@ const Footers = styled.footer`
   }
 
   div {
-
     p {
       font-family: ${Fonts.font_infra};
       color: ${Colors.color_black};
@@ -18,21 +17,19 @@ const Footers = styled.footer`
       font-size: 16px;
     }
 
-    
     div {
       margin-bottom: 30px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      
+
       .content-list {
         display: flex;
         align-items: center;
 
         li {
-
           &:hover a {
-            color: ${Colors.color_brown}
+            color: ${Colors.color_brown};
           }
 
           a {
@@ -52,9 +49,8 @@ const Footers = styled.footer`
         align-items: center;
 
         li {
-
           &:hover a {
-            color: ${Colors.color_brown}
+            color: ${Colors.color_brown};
           }
 
           a {
@@ -64,12 +60,12 @@ const Footers = styled.footer`
         }
 
         li:not(:last-child) {
-          margin-right: 20px;
+          margin-right: 30px;
         }
       }
     }
   }
-  
+
   @media (max-width: ${Width.max_sm}) {
     padding: 40px 0;
     text-align: center;
@@ -79,21 +75,18 @@ const Footers = styled.footer`
     }
 
     div {
-
       p {
         font-size: 16px;
       }
 
-      
       div {
         flex-direction: column;
-        
+
         .content-list {
           flex-direction: column;
           margin-bottom: 20px;
 
           li {
-
             a {
               font-size: 18px;
             }
@@ -110,7 +103,6 @@ const Footers = styled.footer`
           align-items: center;
 
           li {
-
             a {
               font-size: 18px;
               color: ${Colors.color_black};
@@ -120,7 +112,7 @@ const Footers = styled.footer`
       }
     }
   }
-  
+
   @media (max-width: ${Width.max_xs}) {
     padding: 30px 0;
     text-align: center;
@@ -130,21 +122,18 @@ const Footers = styled.footer`
     }
 
     div {
-
       p {
         font-size: 14px;
       }
 
-      
       div {
         flex-direction: column;
-        
+
         .content-list {
           flex-direction: column;
           margin-bottom: 20px;
 
           li {
-
             a {
               font-size: 16px;
             }
@@ -161,7 +150,6 @@ const Footers = styled.footer`
           align-items: center;
 
           li {
-
             a {
               font-size: 16px;
               color: ${Colors.color_black};
@@ -171,6 +159,6 @@ const Footers = styled.footer`
       }
     }
   }
-`
+`;
 
 export { Footers };

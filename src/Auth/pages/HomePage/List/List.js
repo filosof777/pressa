@@ -2,18 +2,17 @@ import styled from "styled-components";
 import { Colors, Fonts, Width } from "../../../Variables";
 
 const Wrapper = styled.div`
-border-radius: 30px;
+  border-radius: 30px;
   margin-bottom: 280px;
   padding: 100px 0 250px 0;
   background-color: ${Colors.background_color_white};
-  
+
   ul {
     margin-bottom: 100px;
     display: grid;
     grid-template-columns: repeat(3, 32%);
     grid-gap: 60px 30px;
     justify-content: start;
-
 
     .item {
       box-shadow: 0 0 20px 5px #00000020;
@@ -32,7 +31,7 @@ border-radius: 30px;
 
         h2 {
           font-size: 24px;
-          width: 80%;
+          width: 85%;
           font-weight: 600;
           font-family: ${Fonts.font_infra};
           margin-bottom: 10px;
@@ -73,7 +72,6 @@ border-radius: 30px;
     img {
       vertical-align: middle;
     }
-
   }
   .btn {
     margin: 0 auto;
@@ -94,7 +92,7 @@ border-radius: 30px;
     ul {
       grid-template-columns: repeat(2, auto);
       grid-gap: 40px 20px;
-      
+
       .item {
         .inner {
           h2 {
@@ -122,6 +120,6 @@ border-radius: 30px;
   a {
     font-size: 18px;
   }
-`
+`;
 
 export { Wrapper };

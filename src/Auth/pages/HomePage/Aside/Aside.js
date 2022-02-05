@@ -17,6 +17,11 @@ const Asides = styled.aside`
       box-shadow: 26px 34px 64px rgba(61, 45, 38, 0.25);
       border-radius: 15px;
 
+      &:nth-child(2) img {
+        width: 74px;
+        height: 53px;
+      } 
+
       img {
         margin-bottom: 25px;
       }
@@ -25,9 +30,14 @@ const Asides = styled.aside`
         display: inline-block;
         width: 100%;
         height: 5px;
-        background: linear-gradient(90deg, #734E3F 7.19%, #F9D7B6 42.95%, #734E3F 84.33%);
-        border-radius: 5px;     
-        margin-bottom: 15px; 
+        background: linear-gradient(
+          90deg,
+          #734e3f 7.19%,
+          #f9d7b6 42.95%,
+          #734e3f 84.33%
+        );
+        border-radius: 5px;
+        margin-bottom: 15px;
       }
 
       h4 {
@@ -93,6 +103,6 @@ const Asides = styled.aside`
       }
     }
   }
-`
+`;
 
 export { Asides };

@@ -12,7 +12,6 @@ const Cards = styled.div`
     display: flex;
 
     .info {
-
       padding-right: 100px;
 
       h1 {
@@ -36,7 +35,7 @@ const Cards = styled.div`
           img {
             width: 50px;
             height: 50px;
-            margin-right: 5px;
+            margin-right: 20px;
           }
         }
       }
@@ -58,7 +57,6 @@ const Cards = styled.div`
           font-size: 30px;
         }
       }
-
     }
 
     .desc {
@@ -113,9 +111,9 @@ const Cards = styled.div`
       }
     }
   }
-`
+`;
 
-const Slider = styled.div `
+const Slider = styled.div`
   padding-bottom: 225px;
   font-family: ${Fonts.font_infra};
 
@@ -124,13 +122,14 @@ const Slider = styled.div `
     align-items: center;
 
     li {
+      width: 400px;
       border-radius: 16px;
       overflow: hidden;
       background-color: #fff;
 
       .inner {
-        padding: 35px ;
-        
+        padding: 35px;
+
         h2 {
           font-size: 24px;
           font-weight: 600;
@@ -170,6 +169,6 @@ const Slider = styled.div `
       }
     }
   }
-`
+`;
 
-export {Cards, Slider};
+export { Cards, Slider };

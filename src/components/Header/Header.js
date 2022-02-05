@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { Container } from '../../Auth/Containers';
-import { Headers } from '../../Auth/Header';
-import { Button, CenterBetween } from '../../Auth/Mixins';
-import logo from '../../assets/img/pressa-logo.svg'
-import { NavLink } from 'react-router-dom';
+import React, { useState } from "react";
+import { Container } from "../../Auth/Containers";
+import { Headers } from "../../Auth/Header";
+import { Button, CenterBetween } from "../../Auth/Mixins";
+import logo from "../../assets/img/pressa-logo.svg";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   const [isActive, setActive] = useState(false);
 
   function ShowMenu() {
-    setActive(!isActive)
+    setActive(!isActive);
   }
 
   return (
@@ -19,7 +19,7 @@ function Header() {
           <NavLink to="/">
             <img src={logo} alt="site logo" />
           </NavLink>
-          <nav className={isActive ? 'show' : ""}>
+          <nav className={isActive ? "show" : ""}>
             <ul>
               <li>
                 <NavLink to="/about">Loyiha haqida</NavLink>
@@ -28,11 +28,13 @@ function Header() {
                 <NavLink to="/faq">FAQ</NavLink>
               </li>
             </ul>
-            <NavLink to='/add-post'>
+            <NavLink to="/add-post">
               <Button>E'lon berish</Button>
             </NavLink>
           </nav>
-          <button onClick={ShowMenu}><i className="fas fa-bars"></i></button>
+          <button onClick={ShowMenu}>
+            <i className="fas fa-bars"></i>
+          </button>
         </CenterBetween>
       </Container>
     </Headers>

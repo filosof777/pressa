@@ -1,45 +1,48 @@
-import React, { useEffect, useState } from 'react';
-import { Container, ContainerFluid } from '../../../../../Auth/Containers';
-import {Cards, Slider} from '../../../../../Auth/pages/HomePage/List/Card/Card';
-import pensil from '../../../../../assets/icons/pensil.svg'
-import calendar from '../../../../../assets/icons/calendar.svg'
-import clock from '../../../../../assets/icons/clock.svg'
-import offline from '../../../../../assets/icons/offline.svg'
-import online from '../../../../../assets/icons/online.svg'
-import eye from '../../../../../assets/icons/eye.svg'
-import comment from '../../../../../assets/icons/comment.svg'
+import React, { useEffect, useState } from "react";
+import { Container, ContainerFluid } from "../../../../../Auth/Containers";
+import {
+  Cards,
+  Slider,
+} from "../../../../../Auth/pages/HomePage/List/Card/Card";
+import pensil from "../../../../../assets/icons/pensil.svg";
+import calendar from "../../../../../assets/icons/calendar.svg";
+import clock from "../../../../../assets/icons/clock.svg";
+import offline from "../../../../../assets/icons/offline.svg";
+import online from "../../../../../assets/icons/online.svg";
+import eye from "../../../../../assets/icons/eye.svg";
+import comment from "../../../../../assets/icons/comment.svg";
 
-function Card({id}) {
-
+function Card({ id }) {
   const [cardInfo, setCardInfo] = useState([]);
   const [recomendedInfo, setRecomendedInfo] = useState([]);
-  
-  useEffect( async () => {
+
+  useEffect(async () => {
     let [card_, recomended_] = await Promise.all([
-      fetch(`https://dream-team-v2.herokuapp.com/api/cards?id=${id[0]}`),
-      fetch(`https://dream-team-v2.herokuapp.com/api/recomendet?id=${id[1]}`)
-    ])
+      fetch(`http://192.168.3.13:8080/api/cards?id=${id[0]}`),
+      fetch(`http://192.168.3.13:8080/api/recomendet?id=${id[1]}`),
+    ]);
     var [card, recomended] = await Promise.all([
-      card_.json(), recomended_.json()
-    ])
+      card_.json(),
+      recomended_.json(),
+    ]);
     setCardInfo(card);
     setRecomendedInfo(recomended);
-  }, [])
+  }, []);
 
   return (
     <>
       <ContainerFluid>
         <Cards>
           <Container>
-            {cardInfo.map(item => {
-              let dataTime = item.date.split(' ')
+            {cardInfo.map((item) => {
+              let dataTime = item.date.split(" ");
               let date = dataTime[0];
               let time = dataTime[1];
               return (
-                <div className='wrapper'>
-                  <div className='info'>
+                <div className="wrapper">
+                  <div className="info">
                     <h1>{item.fullname}</h1>
-                    <ul className='content'>
+                    <ul className="content">
                       <li>
                         <img src={pensil} alt="pensil" />
                         <p>{item.category_name}</p>
@@ -53,33 +56,48 @@ function Card({id}) {
                         <p>{time}</p>
                       </li>
                       <li>
-                        <img src={item.status === 'Online' ? online : offline} alt="pensil" />
+                        <img
+                          src={item.status === "Online" ? online : offline}
+                          alt="pensil"
+                        />
                         <p>{item.status}</p>
                       </li>
                     </ul>
                     <h4>Bo'lishing:</h4>
-                    <ul className='socials'>
+                    <ul className="socials">
                       <li>
-                        <a href="#" target='_blank'><i className="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank">
+                          <i className="fab fa-facebook-f"></i>
+                        </a>
                       </li>
                       <li>
-                        <a href="#" target='_blank'><i className="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank">
+                          <i className="fab fa-instagram"></i>
+                        </a>
                       </li>
                       <li>
-                        <a href="#" target='_blank'><i className="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank">
+                          <i className="fab fa-twitter"></i>
+                        </a>
                       </li>
                       <li>
-                        <a href="#" target='_blank'><i className="fab fa-telegram-plane"></i></a>
+                        <a href="#" target="_blank">
+                          <i className="fab fa-telegram-plane"></i>
+                        </a>
                       </li>
                     </ul>
                     <img src="" alt="" />
                   </div>
-                  <div className='desc'>
+                  <div className="desc">
                     <h3>{item.title}</h3>
-                    <p className='info-text'>{item.short_info}</p>
-                    <img className='info-img' src="https://dream-team-v2.herokuapp.com/public/master.jpg" alt="" />
+                    <p className="info-text">{item.short_info}</p>
+                    <img
+                      className="info-img"
+                      src="http://192.168.3.13:8080/public/master.jpg"
+                      alt=""
+                    />
                     <div>
-                      <p className='text'>{item.long_info}</p>
+                      <p className="text">{item.long_info}</p>
                     </div>
                     <ul>
                       <li>
@@ -92,54 +110,61 @@ function Card({id}) {
                       </li>
                     </ul>
                   </div>
-                </div>    
-              )
+                </div>
+              );
             })}
           </Container>
         </Cards>
       </ContainerFluid>
       <Slider>
         <ul>
-          {recomendedInfo.map(item => {
-              let dataTime = item.date.split(' ')
-              let date = dataTime[0];
-              let time = dataTime[1];
-              return (
-                <li>
-                  <img src='https://media.istockphoto.com/photos/snowcapped-k2-peak-picture-id1288385045?b=1&k=20&m=1288385045&s=170667a&w=0&h=3M3ZRl1bxOGxcvmYZ-TOtuJ3idm0psm4c7GFba1TA5g='alt='' role="presentation" />
-                  <div className='inner'>
-                    <h2>{item.title}</h2>
-                    <h3>{item.fullname}</h3>
-                    <div className='wrapper'>
-                      <div>
-                        <span>
-                          <img src={pensil} alt="" />
-                          <p>{item.category_name}</p>
-                        </span>
-                        <span>
-                          <img src={calendar} alt="" />
-                          <p>{item.date}</p>
-                        </span>
-                      </div>
-                      <div>
-                        <span>
-                          <img src={clock} alt="" />
-                          <p>{item.time}</p>
-                        </span>
-                        <span>
-                          <img src={item.status === 'Online' ? online : offline} alt="" />
-                          <p>{item.status}</p>
-                        </span>
-                      </div>
+          {recomendedInfo.map((item) => {
+            let dataTime = item.date.split(" ");
+            console.log(dataTime);
+            let date = dataTime[0];
+            let time = dataTime[1];
+            return (
+              <li>
+                <img
+                  src="http://192.168.3.13:8080/public/master.jpg"
+                  alt=""
+                  role="presentation"
+                />
+                <div className="inner">
+                  <h2>{item.title}</h2>
+                  <h3>{item.fullname}</h3>
+                  <div className="wrapper">
+                    <div>
+                      <span>
+                        <img src={pensil} alt="" />
+                        <p>{item.category_name}</p>
+                      </span>
+                      <span>
+                        <img src={calendar} alt="" />
+                        <p>{date}</p>
+                      </span>
+                    </div>
+                    <div>
+                      <span>
+                        <img src={clock} alt="" />
+                        <p>{time}</p>
+                      </span>
+                      <span>
+                        <img
+                          src={item.status === "Online" ? online : offline}
+                          alt=""
+                        />
+                        <p>{item.status}</p>
+                      </span>
                     </div>
                   </div>
-                </li>
-              )
-            })}
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </Slider>
     </>
-   
   );
 }
 
