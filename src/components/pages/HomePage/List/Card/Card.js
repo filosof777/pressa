@@ -18,8 +18,8 @@ function Card({ id }) {
 
   useEffect(async () => {
     let [card_, recomended_] = await Promise.all([
-      fetch(`http://192.168.3.13:8080/api/cards?id=${id[0]}`),
-      fetch(`http://192.168.3.13:8080/api/recomendet?id=${id[1]}`),
+      fetch(`https://dream-team-n1.herokuapp.com/api/cards?id=${id[0]}`),
+      fetch(`https://dream-team-n1.herokuapp.com/api/recomendet?id=${id[1]}`),
     ]);
     var [card, recomended] = await Promise.all([
       card_.json(),
@@ -93,7 +93,7 @@ function Card({ id }) {
                     <p className="info-text">{item.short_info}</p>
                     <img
                       className="info-img"
-                      src="http://192.168.3.13:8080/public/master.jpg"
+                      src="https://dream-team-n1.herokuapp.com/public/master.jpg"
                       alt=""
                     />
                     <div>
@@ -126,7 +126,7 @@ function Card({ id }) {
             return (
               <li>
                 <img
-                  src="http://192.168.3.13:8080/public/master.jpg"
+                  src="https://dream-team-n1.herokuapp.com/public/master.jpg"
                   alt=""
                   role="presentation"
                 />

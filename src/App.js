@@ -18,7 +18,7 @@ function App() {
 
   const fetchData = async () => {
     const { data } = await axios.get(
-      `http://192.168.3.13:8080/api/cards?page=${pages}`
+      `https://dream-team-n1.herokuapp.com/api/cards?page=${pages}`
     );
     return data;
   };

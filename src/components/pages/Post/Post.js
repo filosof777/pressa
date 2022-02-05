@@ -27,7 +27,7 @@ function Post() {
 
     fd.append("status", radioValue);
 
-    let response = await fetch(`http://192.168.3.13:8080/api/upload`, {
+    let response = await fetch(`https://dream-team-n1.herokuapp.com/api/upload`, {
       method: "POST",
       body: fd,
     });
@@ -60,7 +60,7 @@ function Post() {
   }
 
   async function fetchFunc() {
-    let fetchRes = await fetch("http://192.168.3.13:8080/api/categories");
+    let fetchRes = await fetch("https://dream-team-n1.herokuapp.com/api/categories");
     fetchRes = await fetchRes.json();
     setFetchData(fetchRes);
   }

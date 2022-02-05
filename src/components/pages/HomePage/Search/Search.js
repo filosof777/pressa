@@ -14,7 +14,7 @@ function Search({ result }) {
     e.preventDefault();
     (async function () {
       const { data } = await axios.get(
-        `http://192.168.3.13:8080/api/cards?search=${search}`
+        `https://dream-team-n1.herokuapp.com/api/cards?search=${search}`
       );
       dispatch(InitialRequest(data));
     })();

@@ -34,7 +34,7 @@ function List({ result, pages, setPages, setHandleId }) {
                     to={`/card/${item.id}`}
                   >
                     <img
-                      src={"http://192.168.3.13:8080/public/master.jpg"}
+                      src={"https://dream-team-n1.herokuapp.com/public/master.jpg"}
                       alt={item.title}
                       role="presentation"
                     />

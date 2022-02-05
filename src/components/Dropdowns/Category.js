@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ChangeCategory } from "./../../Actions/index";
 
-const URL = "http://192.168.3.13:8080/api/categories";
+const URL = "https://dream-team-n1.herokuapp.com/api/categories";
 
-const URL_CARD = "http://192.168.3.13:8080/api/cards";
+const URL_CARD = "https://dream-team-n1.herokuapp.com/api/cards";
 
 function Category({ result: cardResult }) {
   const [result, setResult] = useState([]);
